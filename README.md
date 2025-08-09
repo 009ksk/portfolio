@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Keisuke Kubota - Portfolio
 
-## Getting Started
+フルスタックエンジニアのポートフォリオサイトです。
 
-First, run the development server:
+## 技術スタック
+
+- **フロントエンド**: React 2年
+- **言語**: JavaScript/TypeScript 3年、C# 3年、Python 3年
+- **バックエンド**: Ruby on Rails 1年
+- **インフラ**: AWS 4年
+
+## 開発環境
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- ESLint
+
+## ローカル開発
 
 ```bash
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+開発サーバーは http://localhost:3000 で起動します。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ビルド
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# 本番用ビルド
+npm run build
 
-## Learn More
+# 静的ファイルの確認
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## GitHub Pages へのデプロイ
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+このプロジェクトは GitHub Pages でのホスティングを想定しています。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1. GitHub リポジトリの設定
 
-## Deploy on Vercel
+1. GitHub で新しいリポジトリを作成
+2. このプロジェクトをプッシュ
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/yourusername/portfolio.git
+git push -u origin main
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. GitHub Pages の有効化
+
+1. リポジトリの Settings タブに移動
+2. Pages セクションで Source を "GitHub Actions" に設定
+
+### 3. 自動デプロイ
+
+main ブランチにプッシュすると、GitHub Actions が自動的にビルドとデプロイを実行します。
+
+## プロジェクト構成
+
+```
+src/
+├── app/
+│   ├── page.tsx          # メインページ
+│   └── layout.tsx        # レイアウト
+├── components/
+│   ├── Hero.tsx          # ヒーローセクション
+│   ├── Skills.tsx        # 技術スタック
+│   ├── Projects.tsx      # プロジェクト一覧
+│   ├── Contact.tsx       # お問い合わせ
+│   └── Navigation.tsx    # ナビゲーション
+└── data/
+    └── portfolio.ts      # データ定義
+```
+
+## カスタマイズ
+
+### 技術スタックの更新
+
+`src/data/portfolio.ts` の `skills` 配列を編集してください。
+
+### プロジェクトの追加
+
+`src/data/portfolio.ts` の `projects` 配列に新しいプロジェクトを追加してください。
+
+### スタイルの変更
+
+Tailwind CSS クラスを使用してスタイルをカスタマイズできます。主な色は以下の通りです：
+
+- プライマリ: blue-400, purple-400
+- セカンダリ: gray-300, gray-400
+- 背景: slate-900, purple-900
+
+## ライセンス
+
+MIT License
